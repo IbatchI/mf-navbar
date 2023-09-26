@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm' # See documentation for possible values
+    directory: '/' # Location of package manifests
+    schedule:
+      interval: 'weekly'
+    # Group dependencies to create a single pr per group.
+    groups:
+      prod-deps:
+        dependency-type: 'production'
+      dev-deps:
+        dependency-type: 'development'
