@@ -11,11 +11,7 @@
     "plugin:react/jsx-runtime",
     "prettier"
   ],
-  "plugins": [
-    "react",
-    "import",
-    "@typescript-eslint"
-  ],
+  "plugins": ["react", "import", "@typescript-eslint"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -81,12 +77,7 @@
       {
         "blankLine": "always",
         "prev": "import",
-        "next": [
-          "block-like",
-          "export",
-          "const",
-          "let"
-        ]
+        "next": ["block-like", "export", "const", "let"]
       },
       {
         "blankLine": "always",
@@ -105,25 +96,13 @@
       },
       {
         "blankLine": "always",
-        "prev": [
-          "const",
-          "let",
-          "var"
-        ],
+        "prev": ["const", "let", "var"],
         "next": "*"
       },
       {
         "blankLine": "any",
-        "prev": [
-          "const",
-          "let",
-          "var"
-        ],
-        "next": [
-          "const",
-          "let",
-          "var"
-        ]
+        "prev": ["const", "let", "var"],
+        "next": ["const", "let", "var"]
       }
     ]
   }
