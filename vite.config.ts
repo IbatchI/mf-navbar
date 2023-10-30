@@ -10,7 +10,6 @@ export default defineConfig({
       name: 'host',
       remotes: {
         login: 'http://localhost:5001/assets/remoteEntry.js',
-        pokemon: 'http://localhost:5002/assets/remoteEntry.js',
       },
       shared: ['react', 'react-dom', 'react-router-dom'],
     }),

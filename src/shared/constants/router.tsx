@@ -1,5 +1,7 @@
 import { LazyExoticComponent, lazy } from 'react'
 
+import { Home } from '../../Home'
+
 // import Layout from '../../Layout/Components/Layout/Layout'
 
 type JSXComponents = () => JSX.Element
@@ -18,7 +20,7 @@ export const routes = [
   {
     path: '/',
     name: 'Home',
-    Component: () => <h1>Soy el por defecto</h1>,
+    Component: Home,
     needAuth: false,
   },
   {
