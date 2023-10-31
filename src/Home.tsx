@@ -8,7 +8,7 @@ export const Home = () => {
     <div>
       <span>{accessToken}</span>
       <br />
-      <code>{userInfo}</code>
+      <span>{userInfo && userInfo.name}</span>
     </div>
   )
 }
