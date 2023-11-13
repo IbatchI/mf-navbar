@@ -1,4 +1,5 @@
 declare module 'login/Login'
+
 declare module 'login/AuthStore' {
   interface UserInfo {
     id: number
