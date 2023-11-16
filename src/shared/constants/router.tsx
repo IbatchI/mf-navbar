@@ -16,6 +16,10 @@ const LoginPage = lazy(
   () => import(/* webpackChunkName: "LoginPage" */ 'login/Login'),
 ) as LazyExoticComponent<JSXComponents>
 
+const LoginPage2 = lazy(
+  () => import(/* webpackChunkName: "LoginPage" */ 'login/LoginPage2'),
+) as LazyExoticComponent<JSXComponents>
+
 export const routes = [
   {
     path: '/',
@@ -27,6 +31,12 @@ export const routes = [
     path: '/login',
     name: 'Login',
     Component: LoginPage,
+    needAuth: false,
+  },
+  {
+    path: '/loginPage',
+    name: 'Login Page 2',
+    Component: LoginPage2,
     needAuth: false,
   },
 ] satisfies Route[]

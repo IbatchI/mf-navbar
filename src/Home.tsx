@@ -6,10 +6,16 @@ const userInfo = AuthStore.getUserInfo()
 export const Home = () => {
   return (
     <div>
-      <h1>Soy el home</h1>
-      <span>{accessToken}</span>
+      <h1>Home Navbar-MF</h1>
+      <hr />
       <br />
-      <span>{userInfo && userInfo.name}</span>
+      <h2>Datos del usuario</h2>
+      {userInfo && (
+        <article>
+          <p>Nombre: {`${userInfo.name} ${userInfo.lastaName}`}</p>
+          <p>Access Token: {accessToken}</p>
+        </article>
+      )}
     </div>
   )
 }
