@@ -1,5 +1,6 @@
 declare module 'login/Login'
 declare module 'login/LoginPage2'
+declare module 'login/LoginRoutes'
 
 declare module 'login/AuthStore' {
   interface UserInfo {

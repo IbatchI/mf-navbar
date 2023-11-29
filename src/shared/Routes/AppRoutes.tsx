@@ -9,6 +9,10 @@ export const AppRoutes = () => {
     <Routes>
       {routes.map(({ path, needAuth, Component }) => (
         <Route
+          //    Aca se me ocurre que el mf que maneja la authenticacion comparta este componente Auth protection porque
+          //     en todos los MF vamos a tener que controlar esto, se chequerea dos veces?
+          // no deberia igual porque no renderizamos el App del otro MF
+          // Asi tambien compartiria los permisos del usuario ese array de siempre
           element={needAuth ? <AuthProtection>{<Component />}</AuthProtection> : <Component />}
           key={path}
           path={path}
