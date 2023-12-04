@@ -8,8 +8,15 @@ export default defineConfig({
     react(),
     federation({
       name: 'host',
+      exposes: {
+        './AuthProtection': './src/shared/Routes/AuthRoutes.tsx',
+      },
       remotes: {
-        login: 'http://localhost:5001/assets/remoteEntry.js',
+        // login: 'http://localhost:5001/assets/remoteEntry.js',
+        login: {
+          external: `fetch('http://localhost:5001/assets/remoteEntry.js').then(response=>response.json()).then(data=>data.url).catch(e=>"http://localhost:5002/assets/remoteEntry.js")`,
+          externalType: 'promise',
+        },
       },
       shared: ['react', 'react-dom', 'react-router-dom'],
     }),

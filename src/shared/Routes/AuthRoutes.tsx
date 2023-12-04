@@ -5,7 +5,7 @@ interface IAuthProtectionProps {
 }
 
 export const AuthProtection = ({ children }: IAuthProtectionProps) => {
-  const isAuth = true
+  const isAuth = false
 
   return (
     <>
@@ -22,3 +22,5 @@ export const AuthProtection = ({ children }: IAuthProtectionProps) => {
     </>
   )
 }
+
+export default AuthProtection

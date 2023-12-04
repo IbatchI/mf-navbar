@@ -1,5 +1,5 @@
 // import { LazyExoticComponent, lazy } from 'react'
-import loginRoutes from 'login/LoginRoutes'
+// import loginRoutes from 'login/LoginRoutes'
 
 import { Home } from '../../Home'
 import { IRoute } from '../sharedTypes'
@@ -21,7 +21,17 @@ export const routes = [
     Component: Home,
     needAuth: false,
   },
-  ...loginRoutes,
+  // ...loginRoutes,
 ] satisfies IRoute[]
 
-console.log(loginRoutes)
+export const getRoutes = async (): Promise<IRoute[]> => {
+  try {
+    const loginRoutes = await import('login/LoginRoutes')
+
+    return [...routes, ...loginRoutes]
+  } catch (_e) {
+    return routes
+  }
+}
+
+// console.log(loginRoutes)

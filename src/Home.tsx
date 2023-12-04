@@ -1,7 +1,7 @@
 import AuthStore from 'login/AuthStore'
 
-const accessToken = AuthStore.getToken()
-const userInfo = AuthStore.getUserInfo()
+const accessToken = AuthStore?.getToken() ?? 'a'
+const userInfo = AuthStore?.getUserInfo() ?? { name: 'asd', lastaName: 'asd' }
 
 export const Home = () => {
   return (

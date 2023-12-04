@@ -1,10 +1,18 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
-import { routes } from '../constants/router'
+import { getRoutes } from '../constants/router'
+import { IRoute } from '../sharedTypes'
 
 import { AuthProtection } from './AuthRoutes'
 
 export const AppRoutes = () => {
+  const [routes, setRoutes] = useState<IRoute[]>([])
+
+  useEffect(() => {
+    getRoutes().then((rs) => setRoutes(rs))
+  }, [])
+
   return (
     <Routes>
       {routes.map(({ path, needAuth, Component }) => (
